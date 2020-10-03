@@ -10,7 +10,7 @@ import java.io.File
 
 class RetrofitKotlinBuilder {
 
-    private val urlBase = "http://api.juheapi.com/japi/"
+    val urlBase = "http://api.juheapi.com/japi/"
 
     fun getRetrofitInstance(context: Context): Retrofit {
         return Retrofit.Builder()

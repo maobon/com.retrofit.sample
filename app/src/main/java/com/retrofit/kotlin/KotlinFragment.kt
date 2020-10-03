@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import com.retrofit.Constants
 import com.retrofit.kotlin.model.BeanList
 import com.retrofit.kotlin.retrofit.ApiKotlinService
+import com.retrofit.kotlin.retrofit.ApiSampleService
 import com.retrofit.kotlin.retrofit.RetrofitKotlinBuilder
 import com.retrofit.sample.R
 import kotlinx.android.synthetic.main.fragment_second.*
@@ -34,7 +35,11 @@ class KotlinFragment : Fragment() {
         val requestService = retrofit.create(ApiKotlinService::class.java)
 
         btn_send_get_request.setOnClickListener {
-            val call = requestService.getRequestData(Constants.API_KEY, Constants.API_VERSION, Constants.MONTH, Constants.DAY)
+            // val call = requestService.getRequestData(Constants.API_KEY, Constants.API_VERSION, Constants.MONTH, Constants.DAY)
+
+            val sampleService = ApiSampleService.create()
+            val call = sampleService.getRequestData(Constants.API_KEY, Constants.API_VERSION, Constants.MONTH, Constants.DAY)
+
             resultHandler(call)
         }
 
@@ -51,6 +56,7 @@ class KotlinFragment : Fragment() {
     private fun resultHandler(call: Call<BeanList>) {
 
         call.enqueue(object : Callback<BeanList> {
+
             override fun onResponse(call: Call<BeanList>, response: Response<BeanList>) {
 
                 val data = response.body()?.list
@@ -59,7 +65,6 @@ class KotlinFragment : Fragment() {
                 for (item in resp) {
                     Log.wtf(TAG, "item:$item")
                 }
-
             }
 
             override fun onFailure(call: Call<BeanList>, t: Throwable) {
