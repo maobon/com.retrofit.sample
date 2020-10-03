@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context="com.retrofit.java.JavaFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="Code in Java"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_send_get_request"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GET" />
+
+    <Button
+        android:id="@+id/btn_send_post_request"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="POST" />
+
+    <Button
+        android:id="@+id/btn_to_kotlin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Code in Kotlin"
+        android:textAllCaps="false" />
+
+</LinearLayout>
